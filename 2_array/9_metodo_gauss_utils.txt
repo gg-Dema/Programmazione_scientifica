@@ -1,0 +1,17 @@
+descri<zione generale del funzionamento dello script 9
+
+inizializzo all, n = misura  del sistema inserita dall'utente
+
+per ogni i fino a n ---> numero equazioni AKA row A 
+
+   1 seleziono elemento diagonale [i][i] || primo fattore
+
+   2 divido l'intera riga per quel numero, compreso b
+    (per farlo for j=i, j<n j++)
+   
+   3 sottraggo tutto cio dalla riga successiva k = i+1
+    ( per ogni elemento della riga j)
+    C = a[riga successiva k][i]
+    A[riga i+1 ][j] - A[i][j]*C 
+   
+   4 risolvo ricorsivamente per x

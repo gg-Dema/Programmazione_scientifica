@@ -73,16 +73,18 @@ int main(int argc, char const *argv[])
     float temp;
     last_elem_p = data + MAX_NUM -1; 
     for (data_p=data; data_p < last_elem_p; data_p++){
+        int change=0;
         for(sort_p=last_elem_p; sort_p>data_p; sort_p--){
             if( *(sort_p-1) > *sort_p){
                 temp = *(sort_p-1);
                 *(sort_p-1) = *(sort_p);
                 *(sort_p) = temp; 
+                change=1;
             }
         }
         if ((++log_counter % log_step) == 0){
             printf("LOG_SAVE ITER %d\n", log_counter);
-            fprintf(support_fp, "*** save numb %d ***\n", log_counter/100);
+            fprintf(support_fp, "\n\t*** save numb %d ***\n", log_counter/100);
             char support_symbol; 
            
             for(i=0; i<MAX_NUM; i++){
@@ -101,8 +103,15 @@ int main(int argc, char const *argv[])
                 else{
                     support_symbol = 'E'; 
                 }
-                fprintf(support_fp, "%d %c\n", i, support_symbol); 
+                fprintf(support_fp, " %c", support_symbol); 
+                if (i%30 == 0){
+                    fprintf(support_fp, "\n");
+                }
             }
+        }
+        if(!change){
+            printf("EARLY STOPPING\n");
+            break;
         }
     
     }

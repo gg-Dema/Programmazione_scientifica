@@ -19,13 +19,13 @@ int main(int argc, char const *argv[])
         fprintf(fp,   "%d %f\n", i, x); 
     }   
     //la seguente funzione non viene scritta all'interno del file
-    fprintf(fp, "stringa per causare errori");
+    //fprintf(fp, "stringa per causare errori"); ---> non sembra causare errore ma viene saltata
     fclose(fp);
 
     //lettura file, lettura numeri all'interno
     fp = fopen("3_pointer/random.dat", "r+") ; //r+ lettura e scrittura 
     for (i=0; i<=LEN; i++){
-        fscanf(fp, "%d %lf", &k, &x); 
+        fscanf(fp, "%d %lf", &k, &x); //notare che serve conoscere all'esattezza il formato del file
         *(data + (LEN - k)) = x; 
     }
 

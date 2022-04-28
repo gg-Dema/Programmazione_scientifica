@@ -15,6 +15,7 @@ int main(int argc, char const *argv[])
     printf("Inserire nome del file di output:\n"); 
     while( (c = getchar()) != '\n' && i < MAX_FNAME){
         outputFile[i++] = c; 
+        //usinf getchar instead of scanf allow us to ignore the format of the input
     }
     outputFile[i++] = '\0';
 

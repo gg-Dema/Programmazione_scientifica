@@ -10,7 +10,7 @@ void multiply(char a[], char b[], char result[]);
 
 void main(){
 
-    char a[] = {'1', '1', '\0'};
+    char a[] = {'1', '\0'};
     char b[] = {'5', '2', '1', '\0'};
     char res[N] = {0}; 
 

@@ -3,7 +3,8 @@
 
 
 phaseSpace initXandV(double x0, double v0){
-    return  xAndV = {.x=x0, .v=v0};
+     phaseSpace xAndV  = {.x=x0, .v=v0};
+    return xAndV;
 }
 
 phaseSpace euler(double dt,
